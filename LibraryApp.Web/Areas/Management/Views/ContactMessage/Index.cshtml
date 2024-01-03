@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ContactMessage>
+
+<div class="card radius-15">
+    <div class="card-body">
+        <div class="card-title">
+            <h4 class="mb-0">İletişim Mesajları</h4>
+        </div>
+        <hr>
+        <div class="table-responsive">
+            <table class="table mb-0">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">İsim Soyisim</th>
+                        <th scope="col">Telefon</th>
+                        <th scope="col">Konu</th>
+                        <th scope="col">Açıklama</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model){
+                        <tr>
+                            <th scope="row">@item.Id</th>
+                            <td>@item.FirstName.ToUpper() @item.LastName.ToUpper()</td>
+                            <td>@item.PhoneNumber</td>
+                            <td>@item.Title</td>
+                            <td>@item.Description</td>
+                            <td><a class="btn btn-warning">Düzenle</a></td>
+                            <td><a class="btn btn-danger">Sil</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

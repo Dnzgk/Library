@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Skill>
+
+<a href="/Management/Skill/Create" class="btn btn-primary">Yeni Ekle</a>
+
+<div class="card radius-15">
+	<div class="card-body">
+		<div class="card-title">
+			<h4 class="mb-0">Yetenekler Listesi</h4>
+		</div>
+		<hr>
+		<div class="table-responsive">
+			<table class="table mb-0">
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Başlık</th>
+						<th scope="col">Puan</th> 
+						<th></th> 
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<th scope="row">@item.Id</th>
+							<td>@item.Title</td>
+							<td>@item.Score</td> 
+							<td>
+								<a class="btn btn-success" 
+								href="/Management/Skill/Details/@item.Id">Detay</a>
+
+								<a class="btn btn-warning"
+								   href="/Management/Skill/Edit/@item.Id">Düzenle</a>
+
+								<a class="btn btn-danger"
+								   href="/Management/Skill/Delete/@item.Id">Sil</a>
+							</td>
+						</tr>
+					}
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

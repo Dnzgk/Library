@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Article>
+
+<a href="/Management/Article/Create" class="btn btn-primary">Yeni Ekle</a>
+
+<div class="card radius-15">
+	<div class="card-body">
+		<div class="card-title">
+			<h4 class="mb-0">Makale Listesi</h4>
+		</div>
+		<hr>
+		<div class="table-responsive">
+			<table class="table mb-0">
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Başlık</th>
+						<th scope="col">Yazar</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model)
+					{
+						<tr>
+							<th scope="row">@item.Id</th>
+							<td>@item.Title</td>
+							<td>@item.Author</td>
+							<td>
+								<a class="btn btn-success"
+								   href="/Management/Article/Details/@item.Id">Detay</a>
+
+								<a class="btn btn-warning"
+								   href="/Management/Article/Edit/@item.Id">Düzenle</a>
+
+								<a class="btn btn-danger"
+								   href="/Management/Article/Delete/@item.Id">Sil</a>
+							</td>
+						</tr>
+					}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

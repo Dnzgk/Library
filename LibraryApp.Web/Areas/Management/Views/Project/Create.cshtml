@@ -1,0 +1,23 @@
+﻿@model Project
+
+<div class="card">
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data"> 
+
+            <label asp-for="ImageUrl"></label> 
+            <input type="file" name="img" id="img" accept="image/*" />
+
+            <input class="form-control mb-3" type="text"
+                   placeholder="Başlık" asp-for="Name">
+            <span class="text-danger" asp-validation-for="Name"></span>
+
+            <textarea class="form-control mb-3 ckeditor" type="text"
+                      placeholder="Açıklama" asp-for="Description" rows="4">
+                   </textarea>
+            <span class="text-danger" asp-validation-for="Description"></span>
+
+            <input type="submit" value="Kaydet" class="btn btn-primary" />
+
+        </form>
+    </div>
+</div>

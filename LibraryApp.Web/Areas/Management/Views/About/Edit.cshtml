@@ -1,0 +1,25 @@
+﻿@model About
+
+<div class="card">
+    <div class="card-body">
+        <form method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+
+            <label asp-for="ImageUrl"></label>
+            <img src="@Model.ImageUrl" width="200px" />
+            <input type="file" name="img" id="img" accept="image/*" />
+
+            <input class="form-control mb-3" type="text"
+                   placeholder="Başlık" asp-for="Title">
+            <span class="text-danger" asp-validation-for="Title"></span>
+
+            <textarea class="form-control mb-3 ckeditor" type="text"
+                      placeholder="Açıklama" asp-for="Description" rows="4">
+                   </textarea>
+            <span class="text-danger" asp-validation-for="Description"></span>
+
+            <input type="submit" value="Kaydet" class="btn btn-primary" />
+
+        </form>
+    </div>
+</div>

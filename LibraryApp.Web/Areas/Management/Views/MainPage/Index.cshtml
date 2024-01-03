@@ -1,0 +1,17 @@
+﻿@model MainPage
+
+<a class="btn btn-warning"
+   href="/Management/MainPage/Edit/@Model.Id">Düzenle</a>
+   
+   <br />
+
+@if (!string.IsNullOrEmpty(Model.ImageUrl))
+{
+    <img src="@Model.ImageUrl" width="200px" />
+}
+
+<h1>@Model.Title</h1>
+
+<p>
+    @Model.Description
+</p>

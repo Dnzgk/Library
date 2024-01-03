@@ -1,0 +1,31 @@
+﻿@model Article
+
+<div class="card">
+    <div class="card-body">
+        <form method="post">
+            <label asp-for="Title">Başlık</label>
+            <input class="form-control mb-3" type="text"
+                   placeholder="Başlık" asp-for="Title">
+            <span class="text-danger" asp-validation-for="Title"></span>
+
+            <label asp-for="Author">Yazar</label>
+            <input class="form-control mb-3" type="text"
+                   placeholder="Yazar" asp-for="Author">
+            <span class="text-danger" asp-validation-for="Author"></span>
+
+            <label asp-for="Subject">Konu</label>
+            <input class="form-control mb-3" type="text"
+                   placeholder="Konu" asp-for="Subject">
+            <span class="text-danger" asp-validation-for="Subject"></span>
+
+            <label asp-for="Description">Açıklama</label>
+            <textarea class="form-control mb-3 ckeditor" type="text"
+                      placeholder="Açıklama" asp-for="Description" rows="4">
+                   </textarea>
+            <span class="text-danger" asp-validation-for="Description"></span>
+
+            <input type="submit" value="Kaydet" class="btn btn-primary" />
+
+        </form>
+    </div>
+</div>
